@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Privacy Protector",
+  "version": "1.0",
+  "description": "A comprehensive privacy protection extension with IP leak prevention, WebRTC blocking, and more.",
+  "icons": {
+    "16": "https://files.catbox.moe/8iw46k.jpg",
+    "48": "https://files.catbox.moe/8iw46k.jpg",
+    "128": "https://files.catbox.moe/8iw46k.jpg"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": [
+    "privacy",
+    "webRequest",
+    "webRequestBlocking",
+    "storage",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "options_page": "options.html",
+  "action": {
+    "default_popup": "options.html",
+    "default_icon": {
+      "16": "https://files.catbox.moe/8iw46k.jpg",
+      "48": "https://files.catbox.moe/8iw46k.jpg",
+      "128": "https://files.catbox.moe/8iw46k.jpg"
+    }
+  }
+}

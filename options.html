@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Privacy Protector Settings</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 24px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+    .section {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>Privacy Protector</h2>
+  
+  <div class="section">
+    <h3>IP Protection</h3>
+    <label class="switch">
+      <input type="checkbox" id="blockWebRTC">
+      <span class="slider"></span>
+    </label>
+    <span>Block WebRTC IP leaks</span>
+  </div>
+  
+  <div class="section">
+    <h3>Tracking Protection</h3>
+    <label class="switch">
+      <input type="checkbox" id="randomizeUserAgent">
+      <span class="slider"></span>
+    </label>
+    <span>Randomize User Agent</span>
+    
+    <div style="margin-top: 10px;">
+      <label class="switch">
+        <input type="checkbox" id="blockCloudways">
+        <span class="slider"></span>
+      </label>
+      <span>Block Cloudways Tracking</span>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h3>Spoofing</h3>
+    <label class="switch">
+      <input type="checkbox" id="spoofLocation">
+      <span class="slider"></span>
+    </label>
+    <span>Spoof Location & Timezone</span>
+    
+    <div style="margin-top: 10px;">
+      <label>Time Offset (minutes):</label>
+      <input type="number" id="timeOffset" style="width: 60px;">
+    </div>
+  </div>
+  
+  <div class="section">
+    <h3>Cloudways Bypass</h3>
+    <label class="switch">
+      <input type="checkbox" id="bypassVerification">
+      <span class="slider"></span>
+    </label>
+    <span>Bypass Email Verification</span>
+  </div>
+  
+  <button id="save" style="margin-top: 15px; padding: 8px 15px; background: #2196F3; color: white; border: none; border-radius: 4px; cursor: pointer;">Save Settings</button>
+  
+  <script src="options.js"></script>
+</body>
+</html>
